@@ -95,6 +95,9 @@ public class Active extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setHasFixedSize(true);
 
+        cityList = new ArrayList<>();
+        CityList();
+
         AutoCompleteTextView editText = view.findViewById(R.id.actv);
         AutoCompleteAdapter adapter = new AutoCompleteAdapter(context, cityList);
         editText.setAdapter(adapter);
@@ -125,13 +128,13 @@ public class Active extends Fragment {
         });
 
 
-        CityList();
+
         getLocation();
 
     }
 
     private void CityList() {
-        cityList = new ArrayList<>();
+
         cityList.add(new Item("Delhi", 28.6600, 77.2300));
         cityList.add(new Item("Mumbai", 18.9667, 72.8333));
         cityList.add(new Item("Kolkata", 22.5411, 88.3378));
